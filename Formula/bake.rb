@@ -1,8 +1,8 @@
 class Bake < Formula
   desc "Task runner built to be tastier than Make"
   homepage "https://github.com/trinio-labs/bake"
-  url "https://github.com/trinio-labs/bake/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "dd5f5e9979fc632ece83f5efeb43d5a6f60117834cf8349e9728efb60df79ccc"
+  url "https://github.com/trinio-labs/bake/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "d4dd5498ff662fdfa9e65f83a59ab08be39b72adaa06ae9c02400a1e32c95c7a"
   license "Apache-2.0"
 
   depends_on "rust" => :build
