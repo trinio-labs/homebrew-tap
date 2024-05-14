@@ -5,17 +5,17 @@ class Bake < Formula
   on_macos do
     on_arm do
       url "https://github.com/trinio-labs/bake/releases/download/v0.4.7/bake-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "ade8dd5283b86f5f47dfd4e6cbce18f5d5503dc47ef61591f2466516c1225985"
+      sha256 "48bbcec462aa3cdc0be4f1f331448b946e82edf5ca5486f084bb93d5ea20ecfb"
     end
     on_intel do
       url "https://github.com/trinio-labs/bake/releases/download/v0.4.7/bake-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "547c8c619a3165da8df9a13a63b539f192f68ab1f6a76888b750c10608f01e05"
+      sha256 "469a9b67652581d8a53c2d784a4e59ef12fe0622a0074cfb6669d11b9a7e9d33"
     end
   end
   on_linux do
     on_intel do
       url "https://github.com/trinio-labs/bake/releases/download/v0.4.7/bake-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a23976e2758f0a0e3f6d260b0e5846a459b8250c5ae3b59764171d50b2785e9d"
+      sha256 "9ff9c31a483680850377e26af46445d3b8479e8b714b7092b1294979cee37c70"
     end
   end
   license "Apache-2.0"
