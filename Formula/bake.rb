@@ -5,16 +5,16 @@ class Bake < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/trinio-labs/bake/releases/download/v0.5.0/bake-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "0aa2044711b201b582d4a596323a03159239e52c681ddd7c5c586ed0947d7add"
+      sha256 "22e84cd7f4bda80b57afbc7d601c09e4ec4d5d6bc256f42a674efe3c162773fe"
     end
     if Hardware::CPU.intel?
       url "https://github.com/trinio-labs/bake/releases/download/v0.5.0/bake-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "e39d5bb9ca1e73dc617b63e64398de875f64959ba63d81dd4c17c41c3478debe"
+      sha256 "4f403d40dd2ed80a5f328b1009f3e55c753585f0bc336fb71576c4459a415df3"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/trinio-labs/bake/releases/download/v0.5.0/bake-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "24c4c8a0fb2d26629c50ea20b9775f304d4cf83216d7788392e0805370d4d024"
+    sha256 "fa9315af1ac00ed1f4c6c24bbd4a2a308a141cf0020041962b824b1ef49dd769"
   end
   license "Apache-2.0"
 
