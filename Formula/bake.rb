@@ -1,20 +1,20 @@
 class Bake < Formula
   desc "Task runner built to be tastier than `make`"
   homepage "https://github.com/trinio-labs/bake"
-  version "0.12.0"
+  version "0.13.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/trinio-labs/bake/releases/download/v0.12.0/bake-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "906bfe899ec7f00a9c54c01807bf37f0cceafbc9849e2e5ea991e0624cedb5b4"
+      url "https://github.com/trinio-labs/bake/releases/download/v0.13.0/bake-cli-aarch64-apple-darwin.tar.gz"
+      sha256 "452317eddc2c135313c7688ca148a8ad4c6af6e42c47386fe4449c4b21a55c27"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/trinio-labs/bake/releases/download/v0.12.0/bake-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "7bc88d33186da602bed8b687110492552d2b9626193897653f03c44f34654ac1"
+      url "https://github.com/trinio-labs/bake/releases/download/v0.13.0/bake-cli-x86_64-apple-darwin.tar.gz"
+      sha256 "e5b791a3684364b6b9ade6a1824fa3e9b36d3da825a4592fbe0896ee76609de6"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/trinio-labs/bake/releases/download/v0.12.0/bake-cli-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "b6f01760ff555497ebecbcb3736001ff5f05b2e313d8ce64265f6980fae80de0"
+    url "https://github.com/trinio-labs/bake/releases/download/v0.13.0/bake-cli-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "d5a146153a02429bf4eb39742045e0d65472c2dd15859d2aa3cd4e638147607f"
   end
   license "Apache-2.0"
 
