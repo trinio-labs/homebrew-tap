@@ -5,23 +5,30 @@ class Bake < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "a08e1fa621c4edd8d2c5f3f118ce8419e8f6f432195ea99f4e4dccccd7fb0485"
+      sha256 "0372018cc5e29e9992245a62b6d268af3ef632a8afd9d02668adb61139383cb8"
     end
     if Hardware::CPU.intel?
       url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "d19f7873fc0a7c5e7fcb308d330d631463770096a6fa8366307805dea13ddaed"
+      sha256 "6fc7399c03ece6a8f538c730117d97f6e6c5c264e880671bc6798f8aa9b9f44b"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "c6ab01d51f4952f40be2227c7e943135753d27ed8242436519f07ea30a89dcb6"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "b36755a376169236a3bc739227726726116240a6395c72570e76ac752ddff0e7"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "754d7a915e30cfec66d8b612fb7e3d4b0ffb24b192eb5192e0cf8d6096693211"
+    end
   end
   license "Apache-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -42,6 +49,7 @@ class Bake < Formula
   def install
     bin.install "bake" if OS.mac? && Hardware::CPU.arm?
     bin.install "bake" if OS.mac? && Hardware::CPU.intel?
+    bin.install "bake" if OS.linux? && Hardware::CPU.arm?
     bin.install "bake" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
