@@ -1,25 +1,25 @@
 class Bake < Formula
   desc "Task runner built to be tastier than `make`"
   homepage "https://github.com/trinio-labs/bake"
-  version "2.2.0"
+  version "2.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "0372018cc5e29e9992245a62b6d268af3ef632a8afd9d02668adb61139383cb8"
+      url "https://github.com/trinio-labs/bake/releases/download/v2.3.0/bake-cli-aarch64-apple-darwin.tar.gz"
+      sha256 "9157a88b306b70a77a6a4e2152ff05946bc8e3292047415687bd44ca258a8a06"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "6fc7399c03ece6a8f538c730117d97f6e6c5c264e880671bc6798f8aa9b9f44b"
+      url "https://github.com/trinio-labs/bake/releases/download/v2.3.0/bake-cli-x86_64-apple-darwin.tar.gz"
+      sha256 "5882252f6014b4875433d1b938f0f2118a6b839a91d72549731019d85947779f"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b36755a376169236a3bc739227726726116240a6395c72570e76ac752ddff0e7"
+      url "https://github.com/trinio-labs/bake/releases/download/v2.3.0/bake-cli-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "439932e0c5a70f588f71d3363611fad9911aeda9c5c3bbaa6bf10b19321dfec3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/trinio-labs/bake/releases/download/v2.2.0/bake-cli-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "754d7a915e30cfec66d8b612fb7e3d4b0ffb24b192eb5192e0cf8d6096693211"
+      url "https://github.com/trinio-labs/bake/releases/download/v2.3.0/bake-cli-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3b02724006988bdb271f5e0df9580c63ebaf85f823c839890ccb2efef5180483"
     end
   end
   license "Apache-2.0"
@@ -47,10 +47,18 @@ class Bake < Formula
   end
 
   def install
-    bin.install "bake" if OS.mac? && Hardware::CPU.arm?
-    bin.install "bake" if OS.mac? && Hardware::CPU.intel?
-    bin.install "bake" if OS.linux? && Hardware::CPU.arm?
-    bin.install "bake" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "bake"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "bake"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "bake"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "bake"
+    end
 
     install_binary_aliases!
 
